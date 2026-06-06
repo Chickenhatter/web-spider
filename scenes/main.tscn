@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bmqlwhekg3p6b"]
+
+[node name="Node2D" type="Node2D" unique_id=818152458]
+
+[node name="Node2D" type="Node2D" parent="." unique_id=453785084]
+
+[node name="Spider" type="Node2D" parent="Node2D" unique_id=2039299554]
+
+[node name="Node2D" type="Node2D" parent="Node2D" unique_id=139337864]
