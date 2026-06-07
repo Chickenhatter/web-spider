@@ -29,5 +29,9 @@ func _process(delta: float) -> void:
 func _unhandled_input(event):
 	if event.is_action_pressed("ui_t"):
 		if Trader.dans_area == true:
-			going = false
-			$Web.name == 'Web'
+			await get_tree().create_timer(0.1).timeout
+			if Trader.dans_area == true:
+				if going == true:
+					going = false
+					$fall.name = 'Web'
+					Trader.holding_web = 1

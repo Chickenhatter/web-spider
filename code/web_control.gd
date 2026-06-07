@@ -12,7 +12,8 @@ func _process(delta: float) -> void:
 
 func _unhandled_input(event):
 	if event.is_action_pressed("ui_t"):
-		web()
+		if Trader.holding_web == 1:
+			web()
 func web():
 	var webbed = webscene.instantiate()
 	webbed.global_position = $"../Spider/Node2D".global_position

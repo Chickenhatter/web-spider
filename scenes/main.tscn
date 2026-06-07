@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="2_jyhfs"]
 [ext_resource type="Script" uid="uid://3ao5vpafleh6" path="res://code/smdam.gd" id="3_sugp2"]
 [ext_resource type="Script" uid="uid://bvgbpnsvlvm08" path="res://code/spider_area.gd" id="3_tbgi4"]
+[ext_resource type="Texture2D" uid="uid://m66bvjlqbb6r" path="res://assets/white.png" id="5_tefeu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0wfyh"]
 size = Vector2(5760, 0)
@@ -16,6 +17,7 @@ size = Vector2(5760, 0)
 [node name="Spider" type="Node2D" parent="Node2D" unique_id=2039299554]
 
 [node name="Spider" type="CharacterBody2D" parent="Node2D/Spider" unique_id=806650420]
+z_index = 10
 script = ExtResource("1_0wfyh")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/Spider/Spider" unique_id=1057952904]
@@ -50,6 +52,12 @@ zoom = Vector2(0.2, 0.2)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Base web/Node2D/Web" unique_id=2071263381]
 shape = SubResource("RectangleShape2D_0wfyh")
 
+[node name="White" type="Sprite2D" parent="Node2D/Base web/Node2D/Web" unique_id=1718065354]
+position = Vector2(0.5000357, -1.5)
+scale = Vector2(26.067873, -0.46107787)
+texture = ExtResource("5_tefeu")
+region_rect = Rect2(155.143, 338.57114, 45.714264, 9.142853)
+
 [node name="Node2D2" type="Node2D" parent="Node2D/Base web" unique_id=788259839]
 rotation = 1.5707964
 
@@ -58,6 +66,12 @@ rotation = 1.5707964
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Base web/Node2D2/Web" unique_id=1441207620]
 position = Vector2(-1.5, 0)
 shape = SubResource("RectangleShape2D_0wfyh")
+
+[node name="White" type="Sprite2D" parent="Node2D/Base web/Node2D2/Web" unique_id=1317437284]
+position = Vector2(0.5000357, -1.5)
+scale = Vector2(26.067873, -0.46107787)
+texture = ExtResource("5_tefeu")
+region_rect = Rect2(155.143, 338.57114, 45.714264, 9.142853)
 
 [node name="Node2D3" type="Node2D" parent="Node2D/Base web" unique_id=660640027]
 rotation = 0.7853982
@@ -68,6 +82,12 @@ rotation = 0.7853982
 position = Vector2(-1.5, 0)
 shape = SubResource("RectangleShape2D_0wfyh")
 
+[node name="White" type="Sprite2D" parent="Node2D/Base web/Node2D3/Web" unique_id=429174299]
+position = Vector2(0.5000357, -1.5)
+scale = Vector2(26.067873, -0.46107787)
+texture = ExtResource("5_tefeu")
+region_rect = Rect2(155.143, 338.57114, 45.714264, 9.142853)
+
 [node name="Node2D4" type="Node2D" parent="Node2D/Base web" unique_id=1879313893]
 rotation = 2.3561945
 
@@ -76,6 +96,12 @@ rotation = 2.3561945
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Base web/Node2D4/Web" unique_id=1368757827]
 position = Vector2(-1.4142137, 0)
 shape = SubResource("RectangleShape2D_0wfyh")
+
+[node name="White" type="Sprite2D" parent="Node2D/Base web/Node2D4/Web" unique_id=1351751595]
+position = Vector2(0.5000357, -1.5)
+scale = Vector2(26.067873, -0.46107787)
+texture = ExtResource("5_tefeu")
+region_rect = Rect2(155.143, 338.57114, 45.714264, 9.142853)
 
 [node name="Webby" type="Node2D" parent="Node2D" unique_id=968567277]
 

@@ -1,28 +1,30 @@
 [gd_scene format=3 uid="uid://bufvu62rxxibf"]
 
 [ext_resource type="Script" uid="uid://domdrox5vtsw8" path="res://code/webbed.gd" id="1_82gy5"]
-[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="1_i3sim"]
+[ext_resource type="Texture2D" uid="uid://m66bvjlqbb6r" path="res://assets/white.png" id="2_82gy5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_82gy5"]
+size = Vector2(4, 0)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ci1m2"]
+size = Vector2(0, 0)
 
 [node name="Node2D" type="Node2D" unique_id=1074038496]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=160965738]
+[node name="Webrenessmaker" type="CharacterBody2D" parent="." unique_id=160965738]
 collision_layer = 0
 collision_mask = 0
 script = ExtResource("1_82gy5")
 
-[node name="fall" type="Area2D" parent="CharacterBody2D" unique_id=2087630847]
+[node name="fall" type="Area2D" parent="Webrenessmaker" unique_id=2087630847]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/fall" unique_id=1901091252]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Webrenessmaker/fall" unique_id=1901091252]
 shape = SubResource("RectangleShape2D_82gy5")
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D/fall" unique_id=594103458]
-position = Vector2(-5.9604645e-08, 3.5762787e-07)
-scale = Vector2(0.031249998, 0.15624999)
-texture = ExtResource("1_i3sim")
+[node name="Sprite2D" type="Sprite2D" parent="Webrenessmaker/fall" unique_id=594103458]
+position = Vector2(-5.9604645e-08, 8.34465e-07)
+scale = Vector2(0.018099548, 0.13173655)
+texture = ExtResource("2_82gy5")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=218274563]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Webrenessmaker" unique_id=218274563]
 shape = SubResource("RectangleShape2D_ci1m2")

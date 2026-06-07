@@ -12,12 +12,12 @@ func _physics_process(delta: float) -> void:
 	else:
 		var movement = Vector2.ZERO
 		if Input.is_action_pressed('ui_w'):
-			movement.y -= 1
+			movement = Vector2.UP.rotated(deg_to_rad(rotation_degrees))
 		if Input.is_action_pressed('ui_s'):
-			movement.y += 1
+			movement = Vector2.DOWN.rotated(deg_to_rad(rotation_degrees))
 		if Input.is_action_pressed('ui_a'):
-			movement.x -= 1
+			$".".rotation_degrees -= 1
 		if Input.is_action_pressed('ui_d'):
-			movement.x += 1
+			$".".rotation_degrees += 1
 		velocity = movement * 300
 	move_and_slide()
