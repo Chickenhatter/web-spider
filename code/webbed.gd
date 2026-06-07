@@ -28,4 +28,6 @@ func _process(delta: float) -> void:
 
 func _unhandled_input(event):
 	if event.is_action_pressed("ui_t"):
-		going = false
+		if Trader.dans_area == true:
+			going = false
+			$Web.name == 'Web'

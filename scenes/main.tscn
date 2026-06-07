@@ -4,8 +4,10 @@
 [ext_resource type="Script" uid="uid://rqyni2n57icg" path="res://code/web_control.gd" id="1_o5qli"]
 [ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="2_jyhfs"]
 [ext_resource type="Script" uid="uid://3ao5vpafleh6" path="res://code/smdam.gd" id="3_sugp2"]
+[ext_resource type="Script" uid="uid://bvgbpnsvlvm08" path="res://code/spider_area.gd" id="3_tbgi4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0wfyh"]
+size = Vector2(5760, 0)
 
 [node name="Node2D" type="Node2D" unique_id=818152458]
 
@@ -25,20 +27,54 @@ polygon = PackedVector2Array(15, -132, -145, -8, 9, 210, 166, 16, 30, -128)
 position = Vector2(-1, -2)
 texture = ExtResource("2_jyhfs")
 
+[node name="Spider_area" type="Area2D" parent="Node2D/Spider/Spider" unique_id=121386033]
+script = ExtResource("3_tbgi4")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/Spider/Spider/Spider_area" unique_id=255408508]
+polygon = PackedVector2Array(15, -132, -145, -8, 9, 210, 166, 16, 30, -128)
+
 [node name="WebControl" type="Node2D" parent="Node2D/Spider" unique_id=1217038515]
 script = ExtResource("1_o5qli")
 
 [node name="Camera" type="Node2D" parent="Node2D" unique_id=139337864]
 
 [node name="Camera2D" type="Camera2D" parent="Node2D/Camera" unique_id=32742748]
+zoom = Vector2(0.2, 0.2)
 
 [node name="Base web" type="Node2D" parent="Node2D" unique_id=1009098045]
 
 [node name="Node2D" type="Node2D" parent="Node2D/Base web" unique_id=423543709]
 
-[node name="web" type="Area2D" parent="Node2D/Base web/Node2D" unique_id=959384755]
+[node name="Web" type="Area2D" parent="Node2D/Base web/Node2D" unique_id=959384755]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Base web/Node2D/web" unique_id=2071263381]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Base web/Node2D/Web" unique_id=2071263381]
+shape = SubResource("RectangleShape2D_0wfyh")
+
+[node name="Node2D2" type="Node2D" parent="Node2D/Base web" unique_id=788259839]
+rotation = 1.5707964
+
+[node name="Web" type="Area2D" parent="Node2D/Base web/Node2D2" unique_id=2072323391]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Base web/Node2D2/Web" unique_id=1441207620]
+position = Vector2(-1.5, 0)
+shape = SubResource("RectangleShape2D_0wfyh")
+
+[node name="Node2D3" type="Node2D" parent="Node2D/Base web" unique_id=660640027]
+rotation = 0.7853982
+
+[node name="Web" type="Area2D" parent="Node2D/Base web/Node2D3" unique_id=1749215203]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Base web/Node2D3/Web" unique_id=837639512]
+position = Vector2(-1.5, 0)
+shape = SubResource("RectangleShape2D_0wfyh")
+
+[node name="Node2D4" type="Node2D" parent="Node2D/Base web" unique_id=1879313893]
+rotation = 2.3561945
+
+[node name="Web" type="Area2D" parent="Node2D/Base web/Node2D4" unique_id=941671100]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Base web/Node2D4/Web" unique_id=1368757827]
+position = Vector2(-1.4142137, 0)
 shape = SubResource("RectangleShape2D_0wfyh")
 
 [node name="Webby" type="Node2D" parent="Node2D" unique_id=968567277]

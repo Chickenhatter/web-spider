@@ -6,16 +6,18 @@ const JUMP_VELOCITY = -400.0
 
 
 func _physics_process(delta: float) -> void:
-	#if not is_on_floor():
-		#velocity += get_gravity() * delta
-	var movement = Vector2.ZERO
-	if Input.is_action_pressed('ui_w'):
-		movement.y -= 1
-	if Input.is_action_pressed('ui_s'):
-		movement.y += 1
-	if Input.is_action_pressed('ui_a'):
-		movement.x -= 1
-	if Input.is_action_pressed('ui_d'):
-		movement.x += 1
-	velocity = movement * 300
+	if Trader.dans_area == false:
+		if not is_on_floor():
+			velocity += get_gravity() * delta
+	else:
+		var movement = Vector2.ZERO
+		if Input.is_action_pressed('ui_w'):
+			movement.y -= 1
+		if Input.is_action_pressed('ui_s'):
+			movement.y += 1
+		if Input.is_action_pressed('ui_a'):
+			movement.x -= 1
+		if Input.is_action_pressed('ui_d'):
+			movement.x += 1
+		velocity = movement * 300
 	move_and_slide()
