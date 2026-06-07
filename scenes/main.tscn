@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://fs27sdi7f1uv" path="res://code/spider.gd" id="1_0wfyh"]
 [ext_resource type="Script" uid="uid://rqyni2n57icg" path="res://code/web_control.gd" id="1_o5qli"]
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="2_jyhfs"]
 [ext_resource type="Script" uid="uid://3ao5vpafleh6" path="res://code/smdam.gd" id="3_sugp2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0wfyh"]
@@ -19,6 +20,10 @@ script = ExtResource("1_0wfyh")
 polygon = PackedVector2Array(15, -132, -145, -8, 9, 210, 166, 16, 30, -128)
 
 [node name="Node2D" type="Node2D" parent="Node2D/Spider/Spider" unique_id=213016547 groups=["spider"]]
+
+[node name="Icon" type="Sprite2D" parent="Node2D/Spider/Spider" unique_id=1457705088]
+position = Vector2(-1, -2)
+texture = ExtResource("2_jyhfs")
 
 [node name="WebControl" type="Node2D" parent="Node2D/Spider" unique_id=1217038515]
 script = ExtResource("1_o5qli")

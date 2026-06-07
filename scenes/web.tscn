@@ -12,16 +12,16 @@
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=160965738]
 collision_layer = 0
 collision_mask = 0
+script = ExtResource("1_82gy5")
 
 [node name="Web" type="Area2D" parent="CharacterBody2D" unique_id=2087630847]
-script = ExtResource("1_82gy5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Web" unique_id=1901091252]
 shape = SubResource("RectangleShape2D_82gy5")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D/Web" unique_id=594103458]
-position = Vector2(-1.6093254e-06, 3.5762787e-07)
-scale = Vector2(0.15624999, 0.15624999)
+position = Vector2(-5.9604645e-08, 3.5762787e-07)
+scale = Vector2(0.031249998, 0.15624999)
 texture = ExtResource("1_i3sim")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=218274563]
