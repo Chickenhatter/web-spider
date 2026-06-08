@@ -5,10 +5,13 @@
 [ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="2_jyhfs"]
 [ext_resource type="Script" uid="uid://3ao5vpafleh6" path="res://code/smdam.gd" id="3_sugp2"]
 [ext_resource type="Script" uid="uid://bvgbpnsvlvm08" path="res://code/spider_area.gd" id="3_tbgi4"]
+[ext_resource type="Script" uid="uid://clgybey2helyy" path="res://code/web_area.gd" id="4_o6xl0"]
 [ext_resource type="Texture2D" uid="uid://m66bvjlqbb6r" path="res://assets/white.png" id="5_tefeu"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_tefeu"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0wfyh"]
-size = Vector2(5760, 0)
+size = Vector2(5761, 66)
 
 [node name="Node2D" type="Node2D" unique_id=818152458]
 
@@ -24,6 +27,7 @@ script = ExtResource("1_0wfyh")
 polygon = PackedVector2Array(15, -132, -145, -8, 9, 210, 166, 16, 30, -128)
 
 [node name="Node2D" type="Node2D" parent="Node2D/Spider/Spider" unique_id=213016547 groups=["spider"]]
+position = Vector2(11, 197)
 
 [node name="Icon" type="Sprite2D" parent="Node2D/Spider/Spider" unique_id=1457705088]
 position = Vector2(-1, -2)
@@ -34,6 +38,18 @@ script = ExtResource("3_tbgi4")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/Spider/Spider/Spider_area" unique_id=255408508]
 polygon = PackedVector2Array(15, -132, -145, -8, 9, 210, 166, 16, 30, -128)
+
+[node name="Web_area" type="Area2D" parent="Node2D/Spider/Spider" unique_id=955012799]
+script = ExtResource("4_o6xl0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Spider/Spider/Web_area" unique_id=569730358]
+position = Vector2(10, 197)
+shape = SubResource("CircleShape2D_tefeu")
+
+[node name="Icon" type="Sprite2D" parent="Node2D/Spider/Spider/Web_area" unique_id=165575135]
+position = Vector2(9, 197.5)
+scale = Vector2(0.17187499, 0.17968757)
+texture = ExtResource("2_jyhfs")
 
 [node name="WebControl" type="Node2D" parent="Node2D/Spider" unique_id=1217038515]
 script = ExtResource("1_o5qli")
@@ -50,6 +66,7 @@ zoom = Vector2(0.2, 0.2)
 [node name="Web" type="Area2D" parent="Node2D/Base web/Node2D" unique_id=959384755]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Base web/Node2D/Web" unique_id=2071263381]
+position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_0wfyh")
 
 [node name="White" type="Sprite2D" parent="Node2D/Base web/Node2D/Web" unique_id=1718065354]
@@ -64,7 +81,6 @@ rotation = 1.5707964
 [node name="Web" type="Area2D" parent="Node2D/Base web/Node2D2" unique_id=2072323391]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Base web/Node2D2/Web" unique_id=1441207620]
-position = Vector2(-1.5, 0)
 shape = SubResource("RectangleShape2D_0wfyh")
 
 [node name="White" type="Sprite2D" parent="Node2D/Base web/Node2D2/Web" unique_id=1317437284]

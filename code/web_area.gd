@@ -1,7 +1,6 @@
-extends Node
-var dans_area = true
-var holding_web = 2
-var dans_abdom = false
+extends Area2D
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -9,4 +8,13 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if web_checker() == true:
+		Trader.dans_abdom = true
+	else:
+		Trader.dans_abdom = false
+
+func web_checker():
+	for area in get_overlapping_areas():
+		if area.name == "Web":
+			return true
+	return false
