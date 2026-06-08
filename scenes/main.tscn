@@ -17,6 +17,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0wfyh"]
 size = Vector2(5761, 66)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ya4ey"]
+radius = 111.085556
+
 [node name="Node2D" type="Node2D" unique_id=818152458]
 
 [node name="Node2D" type="Node2D" parent="." unique_id=453785084]
@@ -156,3 +159,13 @@ position = Vector2(-2880, -1620)
 script = ExtResource("11_ya4ey")
 
 [node name="place" type="Node2D" parent="Node2D/Fly around" unique_id=217216027]
+
+[node name="flybug" type="Area2D" parent="Node2D/Fly around/place" unique_id=629882009]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Fly around/place/flybug" unique_id=765036180]
+shape = SubResource("CircleShape2D_ya4ey")
+
+[node name="fly" type="Node2D" parent="Node2D/Fly around" unique_id=327989433]
+
+[connection signal="area_entered" from="Node2D/Fly around/place/flybug" to="Node2D/Fly around" method="_on_flybug_area_entered"]
+[connection signal="area_exited" from="Node2D/Fly around/place/flybug" to="Node2D/Fly around" method="_on_flybug_area_exited"]
