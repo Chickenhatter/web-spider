@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dvwf042jphidy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oujft"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1860705546]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=246801508]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1240192347]
+shape = SubResource("RectangleShape2D_oujft")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1525648664]
+shape = SubResource("RectangleShape2D_oujft")

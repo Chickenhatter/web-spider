@@ -6,7 +6,11 @@
 [ext_resource type="Script" uid="uid://3ao5vpafleh6" path="res://code/smdam.gd" id="3_sugp2"]
 [ext_resource type="Script" uid="uid://bvgbpnsvlvm08" path="res://code/spider_area.gd" id="3_tbgi4"]
 [ext_resource type="Script" uid="uid://clgybey2helyy" path="res://code/web_area.gd" id="4_o6xl0"]
+[ext_resource type="Script" uid="uid://cd3c86cmangao" path="res://code/body_code.gd" id="5_choun"]
 [ext_resource type="Texture2D" uid="uid://m66bvjlqbb6r" path="res://assets/white.png" id="5_tefeu"]
+[ext_resource type="Texture2D" uid="uid://dfni1o3r6kpu4" path="res://assets/spider/back.png" id="5_tipki"]
+[ext_resource type="Texture2D" uid="uid://do6mieau5xklg" path="res://assets/red.png" id="7_85g3d"]
+[ext_resource type="Script" uid="uid://dk1uokl7jmg27" path="res://code/fly_around.gd" id="11_ya4ey"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tefeu"]
 
@@ -50,6 +54,29 @@ shape = SubResource("CircleShape2D_tefeu")
 position = Vector2(9, 197.5)
 scale = Vector2(0.17187499, 0.17968757)
 texture = ExtResource("2_jyhfs")
+
+[node name="Node2D2" type="Node2D" parent="Node2D/Spider/Spider" unique_id=1847208833]
+script = ExtResource("5_choun")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Spider/Spider/Node2D2" unique_id=1596888184]
+z_index = 10
+position = Vector2(5, 64)
+rotation = 3.1415927
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("5_tipki")
+
+[node name="White" type="Sprite2D" parent="Node2D/Spider/Spider/Node2D2" unique_id=153108435]
+z_index = 8
+position = Vector2(10.000002, 114.5)
+scale = Vector2(0.50678736, 0.54491013)
+texture = ExtResource("5_tefeu")
+
+[node name="Red" type="Sprite2D" parent="Node2D/Spider/Spider/Node2D2" unique_id=72814996]
+self_modulate = Color(0.43634078, 0.38457566, 0.30790743, 1)
+z_index = 9
+position = Vector2(10.500001, 115.00001)
+scale = Vector2(0.45199996, 0.344)
+texture = ExtResource("7_85g3d")
 
 [node name="WebControl" type="Node2D" parent="Node2D/Spider" unique_id=1217038515]
 script = ExtResource("1_o5qli")
@@ -123,3 +150,9 @@ region_rect = Rect2(155.143, 338.57114, 45.714264, 9.142853)
 
 [node name="Node2D" type="Node2D" parent="Node2D/Webby" unique_id=73878123]
 script = ExtResource("3_sugp2")
+
+[node name="Fly around" type="Node2D" parent="Node2D" unique_id=1287126337]
+position = Vector2(-2880, -1620)
+script = ExtResource("11_ya4ey")
+
+[node name="place" type="Node2D" parent="Node2D/Fly around" unique_id=217216027]
