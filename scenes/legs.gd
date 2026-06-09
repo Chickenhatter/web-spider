@@ -45,3 +45,8 @@ func _process(delta: float) -> void:
 	$leg_five/leg_five/off.rotation_degrees = (sin_control_five-1) * 20
 	$leg_six/leg_six.rotation_degrees = sin_control_six * 15
 	$leg_six/leg_six/off.rotation_degrees = (sin_control_six+1) * 20
+	
+	$leg_seven/leg_seven.rotation_degrees = sin_control_seven * 15
+	$leg_seven/leg_seven/off.rotation_degrees = (sin_control_seven-1) * 20
+	$leg_eight/leg_eight.rotation_degrees = sin_control_eight * 15
+	$leg_eight/leg_eight/off.rotation_degrees = (sin_control_eight+1) * 20

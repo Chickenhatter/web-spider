@@ -11,6 +11,10 @@
 [ext_resource type="Texture2D" uid="uid://dfni1o3r6kpu4" path="res://assets/spider/back.png" id="5_tipki"]
 [ext_resource type="Texture2D" uid="uid://do6mieau5xklg" path="res://assets/red.png" id="7_85g3d"]
 [ext_resource type="Script" uid="uid://cersxxiv4qbk" path="res://scenes/legs.gd" id="9_eb6dy"]
+[ext_resource type="Texture2D" uid="uid://dyft6qcq2uhge" path="res://assets/spider/main-modified.png" id="9_jbj1t"]
+[ext_resource type="Texture2D" uid="uid://cdge6tp2jhq2o" path="res://assets/spider/bottomlg-modified.png" id="10_a8y0u"]
+[ext_resource type="Texture2D" uid="uid://bh8yb4n7xn57s" path="res://assets/spider/head-modified.png" id="10_muem4"]
+[ext_resource type="Texture2D" uid="uid://bu1swq8vr4mop" path="res://assets/spider/toplg-modified.png" id="11_jkv2x"]
 [ext_resource type="Script" uid="uid://dk1uokl7jmg27" path="res://code/fly_around.gd" id="11_ya4ey"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tefeu"]
@@ -32,12 +36,13 @@ z_index = 10
 script = ExtResource("1_0wfyh")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/Spider/Spider" unique_id=1057952904]
-polygon = PackedVector2Array(15, -132, -145, -8, 9, 210, 166, 16, 30, -128)
+polygon = PackedVector2Array(-8, -130, -14, -91, -11, -56, -8, -38, -2, -26, -16, -19, -25, -8, -31, 8, -27, 23, -19, 34, -10, 40, 35, 40, 44, 32, 51, 22, 53, 10, 51, -2, 43, -15, 34, -23, 31, -23, 40, -37, 43, -54, 43, -60, 48, -77, 46, -110, 37, -130, 38, -105, 16, -89, -7, -105)
 
 [node name="Node2D" type="Node2D" parent="Node2D/Spider/Spider" unique_id=213016547 groups=["spider"]]
 position = Vector2(11, 197)
 
 [node name="Icon" type="Sprite2D" parent="Node2D/Spider/Spider" unique_id=1457705088]
+visible = false
 position = Vector2(-1, -2)
 texture = ExtResource("2_jyhfs")
 
@@ -45,7 +50,7 @@ texture = ExtResource("2_jyhfs")
 script = ExtResource("3_tbgi4")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/Spider/Spider/Spider_area" unique_id=255408508]
-polygon = PackedVector2Array(15, -132, -145, -8, 9, 210, 166, 16, 30, -128)
+polygon = PackedVector2Array(-2, -26, -22, -13, -30, 7, -26, 26, -11, 40, 34, 40, 48, 29, 54, 11, 48, -9, 38, -20, 31, -23)
 
 [node name="Web_area" type="Area2D" parent="Node2D/Spider/Spider" unique_id=955012799]
 script = ExtResource("4_o6xl0")
@@ -82,174 +87,201 @@ position = Vector2(10.500001, 115.00001)
 scale = Vector2(0.45199996, 0.344)
 texture = ExtResource("7_85g3d")
 
+[node name="main" type="Sprite2D" parent="Node2D/Spider/Spider/Abdomen" unique_id=1740517275]
+position = Vector2(12, 29)
+scale = Vector2(0.15662503, 0.112375006)
+texture = ExtResource("9_jbj1t")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Node2D/Spider/Spider/Abdomen" unique_id=140273874]
+position = Vector2(22, -42)
+scale = Vector2(0.1755, 0.239)
+texture = ExtResource("10_muem4")
+
 [node name="Legs" type="Node2D" parent="Node2D/Spider/Spider" unique_id=39576598]
 script = ExtResource("9_eb6dy")
 
 [node name="leg_one" type="Node2D" parent="Node2D/Spider/Spider/Legs" unique_id=797552594]
+position = Vector2(30, 1)
 
 [node name="leg_one" type="Node2D" parent="Node2D/Spider/Spider/Legs/leg_one" unique_id=1392437789]
 position = Vector2(-51, 27)
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/Spider/Spider/Legs/leg_one/leg_one" unique_id=54045782]
-position = Vector2(-12.567927, 6.619975)
-rotation = -0.4777375
-scale = Vector2(0.34138346, 0.1328125)
-texture = ExtResource("2_jyhfs")
+position = Vector2(-8, -2)
+rotation = -0.8282486
+scale = Vector2(0.13381757, 0.062216394)
+texture = ExtResource("10_a8y0u")
 
 [node name="off" type="Node2D" parent="Node2D/Spider/Spider/Legs/leg_one/leg_one" unique_id=203827687]
-position = Vector2(-32, 16)
+position = Vector2(-37, 19)
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/Spider/Spider/Legs/leg_one/leg_one/off" unique_id=1837743448]
-position = Vector2(-33.000008, 17)
-rotation = -0.46160865
-scale = Vector2(0.6626774, 0.1328125)
-texture = ExtResource("2_jyhfs")
+position = Vector2(30, -48)
+rotation = -1.1065181
+scale = Vector2(0.2206776, 0.04165308)
+texture = ExtResource("11_jkv2x")
 
 [node name="leg_two" type="Node2D" parent="Node2D/Spider/Spider/Legs" unique_id=1510280262]
+position = Vector2(123, 55)
+rotation = 3.1415927
 
-[node name="leg_two" type="Node2D" parent="Node2D/Spider/Spider/Legs/leg_two" unique_id=1398926757]
-position = Vector2(55, 20)
+[node name="leg_two" type="Node2D" parent="Node2D/Spider/Spider/Legs/leg_two" unique_id=1263151938]
+position = Vector2(80.528786, 27.995888)
+scale = Vector2(1, -1)
+skew = 0.017453194
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/Spider/Spider/Legs/leg_two/leg_two" unique_id=1976711472]
-position = Vector2(14.529584, 8.550751)
-rotation = 0.4712389
-scale = Vector2(0.35458317, 0.1328125)
-texture = ExtResource("2_jyhfs")
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Spider/Spider/Legs/leg_two/leg_two" unique_id=2044469377]
+position = Vector2(-8, -2)
+rotation = -0.8282486
+scale = Vector2(0.13381757, 0.062216394)
+texture = ExtResource("10_a8y0u")
 
-[node name="off" type="Node2D" parent="Node2D/Spider/Spider/Legs/leg_two/leg_two" unique_id=1210149405]
-position = Vector2(29, 15)
+[node name="off" type="Node2D" parent="Node2D/Spider/Spider/Legs/leg_two/leg_two" unique_id=2109848935]
+position = Vector2(-37, 19)
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/Spider/Spider/Legs/leg_two/leg_two/off" unique_id=375792994]
-position = Vector2(33.000015, 17.000002)
-rotation = 0.4712389
-scale = Vector2(0.6626774, 0.1328125)
-texture = ExtResource("2_jyhfs")
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Spider/Spider/Legs/leg_two/leg_two/off" unique_id=97595090]
+position = Vector2(30, -48)
+rotation = -1.1065181
+scale = Vector2(0.2206776, 0.04165308)
+texture = ExtResource("11_jkv2x")
 
 [node name="leg_three" type="Node2D" parent="Node2D/Spider/Spider/Legs" unique_id=134163683]
-position = Vector2(-3, -28)
+position = Vector2(33, 1)
+rotation = 0.33161256
 
-[node name="leg_three" type="Node2D" parent="Node2D/Spider/Spider/Legs/leg_three" unique_id=1249662273]
+[node name="leg_three" type="Node2D" parent="Node2D/Spider/Spider/Legs/leg_three" unique_id=1703062110]
 position = Vector2(-51, 27)
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/Spider/Spider/Legs/leg_three/leg_three" unique_id=66991652]
-position = Vector2(-12.567927, 6.619975)
-rotation = -0.4777375
-scale = Vector2(0.34138346, 0.1328125)
-texture = ExtResource("2_jyhfs")
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Spider/Spider/Legs/leg_three/leg_three" unique_id=1762444963]
+position = Vector2(-8, -2)
+rotation = -0.8282486
+scale = Vector2(0.13381757, 0.062216394)
+texture = ExtResource("10_a8y0u")
 
-[node name="off" type="Node2D" parent="Node2D/Spider/Spider/Legs/leg_three/leg_three" unique_id=2031143001]
-position = Vector2(-32, 16)
+[node name="off" type="Node2D" parent="Node2D/Spider/Spider/Legs/leg_three/leg_three" unique_id=220655528]
+position = Vector2(-37, 19)
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/Spider/Spider/Legs/leg_three/leg_three/off" unique_id=210090533]
-position = Vector2(-33.000008, 17)
-rotation = -0.46160865
-scale = Vector2(0.6626774, 0.1328125)
-texture = ExtResource("2_jyhfs")
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Spider/Spider/Legs/leg_three/leg_three/off" unique_id=160104388]
+position = Vector2(30, -48)
+rotation = -1.1065181
+scale = Vector2(0.2206776, 0.04165308)
+texture = ExtResource("11_jkv2x")
 
 [node name="leg_four" type="Node2D" parent="Node2D/Spider/Spider/Legs" unique_id=2066546417]
-position = Vector2(11, -66)
+position = Vector2(135, 8)
+rotation = 2.7925267
 
-[node name="leg_four" type="Node2D" parent="Node2D/Spider/Spider/Legs/leg_four" unique_id=27294831]
-position = Vector2(-51, 27)
+[node name="leg_four" type="Node2D" parent="Node2D/Spider/Spider/Legs/leg_four" unique_id=1547166190]
+position = Vector2(80.528786, 27.995888)
+scale = Vector2(1, -1)
+skew = 0.017453194
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/Spider/Spider/Legs/leg_four/leg_four" unique_id=646738948]
-position = Vector2(-12.567927, 6.619975)
-rotation = -0.4777375
-scale = Vector2(0.34138346, 0.1328125)
-texture = ExtResource("2_jyhfs")
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Spider/Spider/Legs/leg_four/leg_four" unique_id=594947886]
+position = Vector2(-8, -2)
+rotation = -0.8282486
+scale = Vector2(0.13381757, 0.062216394)
+texture = ExtResource("10_a8y0u")
 
-[node name="off" type="Node2D" parent="Node2D/Spider/Spider/Legs/leg_four/leg_four" unique_id=1948097946]
-position = Vector2(-32, 16)
+[node name="off" type="Node2D" parent="Node2D/Spider/Spider/Legs/leg_four/leg_four" unique_id=178339559]
+position = Vector2(-37, 19)
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/Spider/Spider/Legs/leg_four/leg_four/off" unique_id=100931877]
-position = Vector2(-33.000008, 17)
-rotation = -0.46160865
-scale = Vector2(0.6626774, 0.1328125)
-texture = ExtResource("2_jyhfs")
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Spider/Spider/Legs/leg_four/leg_four/off" unique_id=1064674224]
+position = Vector2(30, -48)
+rotation = -1.1065181
+scale = Vector2(0.2206776, 0.04165308)
+texture = ExtResource("11_jkv2x")
 
 [node name="leg_five" type="Node2D" parent="Node2D/Spider/Spider/Legs" unique_id=65994463]
-position = Vector2(22, -105)
+position = Vector2(82.00001, -35)
+rotation = 0.87266463
 
-[node name="leg_five" type="Node2D" parent="Node2D/Spider/Spider/Legs/leg_five" unique_id=941752252]
-position = Vector2(-51, 27)
+[node name="leg_five" type="Node2D" parent="Node2D/Spider/Spider/Legs/leg_five" unique_id=1496970031]
+position = Vector2(-43, 98)
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/Spider/Spider/Legs/leg_five/leg_five" unique_id=986213219]
-position = Vector2(-12.567927, 6.619975)
-rotation = -0.4777375
-scale = Vector2(0.34138346, 0.1328125)
-texture = ExtResource("2_jyhfs")
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Spider/Spider/Legs/leg_five/leg_five" unique_id=1969551472]
+position = Vector2(-8, -2)
+rotation = -0.8282486
+scale = Vector2(0.13381757, 0.062216394)
+texture = ExtResource("10_a8y0u")
 
-[node name="off" type="Node2D" parent="Node2D/Spider/Spider/Legs/leg_five/leg_five" unique_id=1641292892]
-position = Vector2(-32, 16)
+[node name="off" type="Node2D" parent="Node2D/Spider/Spider/Legs/leg_five/leg_five" unique_id=1327740883]
+position = Vector2(-37, 19)
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/Spider/Spider/Legs/leg_five/leg_five/off" unique_id=940178938]
-position = Vector2(-33.000008, 17)
-rotation = -0.46160865
-scale = Vector2(0.6626774, 0.1328125)
-texture = ExtResource("2_jyhfs")
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Spider/Spider/Legs/leg_five/leg_five/off" unique_id=1265376774]
+position = Vector2(30, -48)
+rotation = -1.1065181
+scale = Vector2(0.2206776, 0.04165308)
+texture = ExtResource("11_jkv2x")
 
 [node name="leg_six" type="Node2D" parent="Node2D/Spider/Spider/Legs" unique_id=1500951915]
-position = Vector2(0, -28)
+position = Vector2(120, -48)
+rotation = 2.268928
 
-[node name="leg_six" type="Node2D" parent="Node2D/Spider/Spider/Legs/leg_six" unique_id=1854210174]
-position = Vector2(-51, 27)
+[node name="leg_six" type="Node2D" parent="Node2D/Spider/Spider/Legs/leg_six" unique_id=1350379418]
+position = Vector2(80.528786, 27.995888)
+scale = Vector2(1, -1)
+skew = 0.017453194
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/Spider/Spider/Legs/leg_six/leg_six" unique_id=365981698]
-position = Vector2(-12.567927, 6.619975)
-rotation = -0.4777375
-scale = Vector2(0.34138346, 0.1328125)
-texture = ExtResource("2_jyhfs")
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Spider/Spider/Legs/leg_six/leg_six" unique_id=942544075]
+position = Vector2(-8, -2)
+rotation = -0.8282486
+scale = Vector2(0.13381757, 0.062216394)
+texture = ExtResource("10_a8y0u")
 
-[node name="off" type="Node2D" parent="Node2D/Spider/Spider/Legs/leg_six/leg_six" unique_id=124415280]
-position = Vector2(-32, 16)
+[node name="off" type="Node2D" parent="Node2D/Spider/Spider/Legs/leg_six/leg_six" unique_id=312002139]
+position = Vector2(-37, 19)
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/Spider/Spider/Legs/leg_six/leg_six/off" unique_id=813410071]
-position = Vector2(-33.000008, 17)
-rotation = -0.46160865
-scale = Vector2(0.6626774, 0.1328125)
-texture = ExtResource("2_jyhfs")
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Spider/Spider/Legs/leg_six/leg_six/off" unique_id=1720239622]
+position = Vector2(30, -48)
+rotation = -1.1065181
+scale = Vector2(0.2206776, 0.04165308)
+texture = ExtResource("11_jkv2x")
 
 [node name="leg_seven" type="Node2D" parent="Node2D/Spider/Spider/Legs" unique_id=2075440647]
-position = Vector2(-8, -66)
+position = Vector2(20, 30.999992)
+rotation = 1.3962634
 
-[node name="leg_seven" type="Node2D" parent="Node2D/Spider/Spider/Legs/leg_seven" unique_id=953550340]
+[node name="leg_seven" type="Node2D" parent="Node2D/Spider/Spider/Legs/leg_seven" unique_id=96150696]
 position = Vector2(-51, 27)
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/Spider/Spider/Legs/leg_seven/leg_seven" unique_id=536646932]
-position = Vector2(-12.567927, 6.619975)
-rotation = -0.4777375
-scale = Vector2(0.34138346, 0.1328125)
-texture = ExtResource("2_jyhfs")
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Spider/Spider/Legs/leg_seven/leg_seven" unique_id=133448756]
+position = Vector2(-8, -2)
+rotation = -0.8282486
+scale = Vector2(0.13381757, 0.062216394)
+texture = ExtResource("10_a8y0u")
 
-[node name="off" type="Node2D" parent="Node2D/Spider/Spider/Legs/leg_seven/leg_seven" unique_id=630953736]
-position = Vector2(-32, 16)
+[node name="off" type="Node2D" parent="Node2D/Spider/Spider/Legs/leg_seven/leg_seven" unique_id=1756837019]
+position = Vector2(-37, 19)
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/Spider/Spider/Legs/leg_seven/leg_seven/off" unique_id=1391896347]
-position = Vector2(-33.000008, 17)
-rotation = -0.46160865
-scale = Vector2(0.6626774, 0.1328125)
-texture = ExtResource("2_jyhfs")
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Spider/Spider/Legs/leg_seven/leg_seven/off" unique_id=822942878]
+position = Vector2(30, -48)
+rotation = -1.1065181
+scale = Vector2(0.2206776, 0.04165308)
+texture = ExtResource("11_jkv2x")
 
 [node name="leg_eight" type="Node2D" parent="Node2D/Spider/Spider/Legs" unique_id=483706065]
-position = Vector2(-14, -106)
+position = Vector2(80, -88)
+rotation = 1.7453293
 
-[node name="leg_eight" type="Node2D" parent="Node2D/Spider/Spider/Legs/leg_eight" unique_id=1102904897]
-position = Vector2(-51, 27)
+[node name="leg_eight" type="Node2D" parent="Node2D/Spider/Spider/Legs/leg_eight" unique_id=1265660071]
+position = Vector2(80.528786, 27.995888)
+scale = Vector2(1, -1)
+skew = 0.017453194
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/Spider/Spider/Legs/leg_eight/leg_eight" unique_id=1087156680]
-position = Vector2(-12.567927, 6.619975)
-rotation = -0.4777375
-scale = Vector2(0.34138346, 0.1328125)
-texture = ExtResource("2_jyhfs")
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Spider/Spider/Legs/leg_eight/leg_eight" unique_id=212471538]
+position = Vector2(-8, -2)
+rotation = -0.8282486
+scale = Vector2(0.13381757, 0.062216394)
+texture = ExtResource("10_a8y0u")
 
-[node name="off" type="Node2D" parent="Node2D/Spider/Spider/Legs/leg_eight/leg_eight" unique_id=1501966716]
-position = Vector2(-32, 16)
+[node name="off" type="Node2D" parent="Node2D/Spider/Spider/Legs/leg_eight/leg_eight" unique_id=185588541]
+position = Vector2(-37, 19)
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/Spider/Spider/Legs/leg_eight/leg_eight/off" unique_id=1653776183]
-position = Vector2(-33.000008, 17)
-rotation = -0.46160865
-scale = Vector2(0.6626774, 0.1328125)
-texture = ExtResource("2_jyhfs")
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Spider/Spider/Legs/leg_eight/leg_eight/off" unique_id=1821643042]
+position = Vector2(30, -48)
+rotation = -1.1065181
+scale = Vector2(0.2206776, 0.04165308)
+texture = ExtResource("11_jkv2x")
 
 [node name="WebControl" type="Node2D" parent="Node2D/Spider" unique_id=1217038515]
 script = ExtResource("1_o5qli")
