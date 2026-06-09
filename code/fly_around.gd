@@ -21,7 +21,7 @@ func spider_place():
 	bug_fly_up = true
 	await get_tree().create_timer(5.0).timeout
 	bug_fly_up = false
-	if ineweb == true:
+	if inweb == true:
 		$place.position.y = 100
 		$place.position.x = -100
 	await get_tree().create_timer(5.0).timeout
