@@ -25,7 +25,10 @@ func _physics_process(delta: float) -> void:
 		if Input.is_action_pressed('ui_s'):
 			movement = Vector2.DOWN.rotated(deg_to_rad(rotation_degrees))
 			caller_direct = 4
-		velocity = movement * 300
+		if Input.is_action_pressed("ui_v"):
+			velocity = movement * 900
+		else:
+			velocity = movement * 300
 	move_and_slide()
 	if caller_direct == 1:
 		Trader.body_move = 'left'

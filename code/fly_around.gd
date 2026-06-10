@@ -22,13 +22,23 @@ func spider_place():
 	await get_tree().create_timer(5.0).timeout
 	bug_fly_up = false
 	if inweb == true:
+		websummon()
 		$place.position.y = 100
 		$place.position.x = -100
 	await get_tree().create_timer(5.0).timeout
 	$place.position.y = 100
 	$place.position.x = -100
-	await get_tree().create_timer(20.0).timeout 
+	await get_tree().create_timer(20.0).timeout
+	for child in $"../Flyparent".get_children():
+			child.queue_free()
 	spider_place()
+
+func websummon():
+	var fly = flyscene.instantiate()
+	fly.global_position = $place.global_position
+	fly.global_rotation = $place.global_rotation
+	var flyparent = $"../Flyparent"
+	flyparent.add_child(fly)
 
 
 func _on_flybug_area_entered(area: Area2D) -> void:

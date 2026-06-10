@@ -367,7 +367,15 @@ script = ExtResource("11_ya4ey")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Fly around/place/flybug" unique_id=765036180]
 shape = SubResource("CircleShape2D_ya4ey")
 
+[node name="Icon" type="Sprite2D" parent="Node2D/Fly around/place" unique_id=1565406443]
+position = Vector2(-2, -8)
+texture = ExtResource("2_jyhfs")
+
 [node name="fly" type="Node2D" parent="Node2D/Fly around" unique_id=327989433]
+
+[node name="Flyparent" type="Node2D" parent="Node2D" unique_id=2031274204]
+
+[node name="webbedflyparent" type="Node2D" parent="Node2D" unique_id=316358881]
 
 [connection signal="area_entered" from="Node2D/Fly around/place/flybug" to="Node2D/Fly around" method="_on_flybug_area_entered"]
 [connection signal="area_exited" from="Node2D/Fly around/place/flybug" to="Node2D/Fly around" method="_on_flybug_area_exited"]
