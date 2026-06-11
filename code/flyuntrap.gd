@@ -16,7 +16,8 @@ func _on_flyuntrap_body_entered(body: Node2D) -> void:
 
 func webbed_fly():
 	var flyweb = webfly.instantiate()
-	flyweb.global_position = $"../Flyparent/CharacterBody2D".global_position
-	flyweb.global_rotation = $"../Flyparent/CharacterBody2D".global_rotation
-	var webbedflyparent = $"../webbedflyparent"
+	flyweb.global_position = $".".global_position
+	flyweb.global_rotation = $".".global_rotation
+	var webbedflyparent = $"../../webbedflyparent"
 	webbedflyparent.add_child(flyweb)
+	queue_free()

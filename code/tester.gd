@@ -1,9 +1,5 @@
-extends Node
-var dans_area = true
-var holding_web = 2
-var dans_abdom = false
-var body_move = 'sin'
-var backrestart = false
+extends Node2D
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

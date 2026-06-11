@@ -19,7 +19,7 @@ func spider_place():
 	$place.position.x = xplace
 	$place.position.y = yplace
 	bug_fly_up = true
-	await get_tree().create_timer(5.0).timeout
+	await get_tree().create_timer(8.0).timeout
 	bug_fly_up = false
 	if inweb == true:
 		websummon()
@@ -31,6 +31,7 @@ func spider_place():
 	await get_tree().create_timer(20.0).timeout
 	for child in $"../Flyparent".get_children():
 			child.queue_free()
+	
 	spider_place()
 
 func websummon():

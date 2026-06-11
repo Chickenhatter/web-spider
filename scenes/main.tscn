@@ -18,6 +18,7 @@
 [ext_resource type="Script" uid="uid://dk1uokl7jmg27" path="res://code/fly_around.gd" id="11_ya4ey"]
 [ext_resource type="Texture2D" uid="uid://cb6hld14wel1i" path="res://assets/fly/flyup-modified.png" id="17_dp3eg"]
 [ext_resource type="Texture2D" uid="uid://04dxnl5wbeak" path="res://assets/fly/flydown-modified.png" id="18_0ld40"]
+[ext_resource type="Script" uid="uid://cua0xlqvlo44u" path="res://code/tester.gd" id="19_0ld40"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tefeu"]
 
@@ -56,11 +57,6 @@ polygon = PackedVector2Array(-8, -130, -14, -91, -11, -56, -8, -38, -2, -26, -16
 
 [node name="Node2D" type="Node2D" parent="Node2D/Spider/Spider" unique_id=213016547 groups=["spider"]]
 position = Vector2(11, 197)
-
-[node name="Icon" type="Sprite2D" parent="Node2D/Spider/Spider" unique_id=1457705088]
-visible = false
-position = Vector2(-1, -2)
-texture = ExtResource("2_jyhfs")
 
 [node name="Spider_area" type="Area2D" parent="Node2D/Spider/Spider" unique_id=121386033]
 script = ExtResource("3_tbgi4")
@@ -383,7 +379,9 @@ script = ExtResource("11_ya4ey")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Fly around/place/flybug" unique_id=765036180]
 shape = SubResource("CircleShape2D_ya4ey")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D/Fly around/place" unique_id=148125589]
+[node name="Node2D" type="Node2D" parent="Node2D/Fly around/place" unique_id=1558089750]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D/Fly around/place/Node2D" unique_id=148125589]
 position = Vector2(24, 274)
 scale = Vector2(1, 1.0805)
 sprite_frames = SubResource("SpriteFrames_gqmmt")
@@ -391,6 +389,9 @@ sprite_frames = SubResource("SpriteFrames_gqmmt")
 [node name="fly" type="Node2D" parent="Node2D/Fly around" unique_id=327989433]
 
 [node name="Flyparent" type="Node2D" parent="Node2D" unique_id=2031274204]
+
+[node name="Node2D" type="Node2D" parent="Node2D/Flyparent" unique_id=1809683791]
+script = ExtResource("19_0ld40")
 
 [node name="webbedflyparent" type="Node2D" parent="Node2D" unique_id=316358881]
 

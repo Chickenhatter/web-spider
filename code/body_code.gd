@@ -8,6 +8,10 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if Trader.backrestart == true:
+		$Red.scale.y = 0.344
+		$Red.position.y = 115.0
+		Trader.backrestart = false
 	size_change(0.01)
 
 func size_change(a):
