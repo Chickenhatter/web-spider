@@ -16,6 +16,8 @@
 [ext_resource type="Texture2D" uid="uid://bh8yb4n7xn57s" path="res://assets/spider/head-modified.png" id="10_muem4"]
 [ext_resource type="Texture2D" uid="uid://bu1swq8vr4mop" path="res://assets/spider/toplg-modified.png" id="11_jkv2x"]
 [ext_resource type="Script" uid="uid://dk1uokl7jmg27" path="res://code/fly_around.gd" id="11_ya4ey"]
+[ext_resource type="Texture2D" uid="uid://cb6hld14wel1i" path="res://assets/fly/flyup-modified.png" id="17_dp3eg"]
+[ext_resource type="Texture2D" uid="uid://04dxnl5wbeak" path="res://assets/fly/flydown-modified.png" id="18_0ld40"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tefeu"]
 
@@ -24,6 +26,20 @@ size = Vector2(5761, 66)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ya4ey"]
 radius = 111.085556
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gqmmt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_dp3eg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_0ld40")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
 
 [node name="Node2D" type="Node2D" unique_id=818152458]
 
@@ -367,9 +383,10 @@ script = ExtResource("11_ya4ey")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Fly around/place/flybug" unique_id=765036180]
 shape = SubResource("CircleShape2D_ya4ey")
 
-[node name="Icon" type="Sprite2D" parent="Node2D/Fly around/place" unique_id=1565406443]
-position = Vector2(-2, -8)
-texture = ExtResource("2_jyhfs")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D/Fly around/place" unique_id=148125589]
+position = Vector2(24, 274)
+scale = Vector2(1, 1.0805)
+sprite_frames = SubResource("SpriteFrames_gqmmt")
 
 [node name="fly" type="Node2D" parent="Node2D/Fly around" unique_id=327989433]
 

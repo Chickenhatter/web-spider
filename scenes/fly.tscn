@@ -1,11 +1,23 @@
 [gd_scene format=3 uid="uid://vkiulncfvq2"]
 
-[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="1_djddo"]
 [ext_resource type="Script" uid="uid://yclk62p4ttpd" path="res://code/flyuntrap.gd" id="1_xr3pu"]
+[ext_resource type="Texture2D" uid="uid://b7qywi3nw43du" path="res://assets/fly/flystuck-modified.png" id="2_xr3pu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tvkj1"]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_djddo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_xr3pu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=373320830]
+scale = Vector2(3, 3)
 collision_layer = 0
 collision_mask = 0
 script = ExtResource("1_xr3pu")
@@ -18,9 +30,9 @@ shape = SubResource("RectangleShape2D_tvkj1")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1380534401]
 shape = SubResource("RectangleShape2D_tvkj1")
 
-[node name="Icon" type="Sprite2D" parent="." unique_id=2046568623]
-position = Vector2(1.4007092e-06, 0)
-scale = Vector2(0.15625001, 0.15624999)
-texture = ExtResource("1_djddo")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2060302853]
+position = Vector2(6, 48)
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_djddo")
 
 [connection signal="body_entered" from="flyuntrap" to="." method="_on_flyuntrap_body_entered"]

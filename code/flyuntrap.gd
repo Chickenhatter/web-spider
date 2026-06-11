@@ -20,4 +20,3 @@ func webbed_fly():
 	flyweb.global_rotation = $"../Flyparent/CharacterBody2D".global_rotation
 	var webbedflyparent = $"../webbedflyparent"
 	webbedflyparent.add_child(flyweb)
-	$"."

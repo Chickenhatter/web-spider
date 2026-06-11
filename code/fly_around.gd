@@ -14,8 +14,8 @@ func _process(delta: float) -> void:
 	pass
 
 func spider_place():
-	xplace = randf_range(0,5760)
-	yplace = randf_range(0,3240)
+	xplace = randf_range(100,5660)
+	yplace = randf_range(100,3140)
 	$place.position.x = xplace
 	$place.position.y = yplace
 	bug_fly_up = true
@@ -25,7 +25,7 @@ func spider_place():
 		websummon()
 		$place.position.y = 100
 		$place.position.x = -100
-	await get_tree().create_timer(5.0).timeout
+	await get_tree().create_timer(100.0).timeout
 	$place.position.y = 100
 	$place.position.x = -100
 	await get_tree().create_timer(20.0).timeout
