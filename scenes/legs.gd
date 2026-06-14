@@ -21,7 +21,6 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	print(Trader.body_move)
 	if Trader.body_move == "left":
 		backleft = 2
 		backright = 1

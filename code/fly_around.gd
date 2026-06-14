@@ -14,21 +14,25 @@ func _process(delta: float) -> void:
 	pass
 
 func spider_place():
-	xplace = randf_range(100,5660)
-	yplace = randf_range(100,3140)
+	xplace = randf_range(300,5460)
+	yplace = randf_range(300,2940)
 	$place.position.x = xplace
 	$place.position.y = yplace
 	bug_fly_up = true
 	await get_tree().create_timer(8.0).timeout
 	bug_fly_up = false
+	for area in $place/flybug.get_overlapping_areas():
+		if area.name == "Web":
+			inweb = true
+			print('true')
 	if inweb == true:
 		websummon()
 		$place.position.y = 100
 		$place.position.x = -100
-	await get_tree().create_timer(100.0).timeout
+	await get_tree().create_timer(2.0).timeout
 	$place.position.y = 100
 	$place.position.x = -100
-	await get_tree().create_timer(20.0).timeout
+	await get_tree().create_timer(5.0).timeout
 	for child in $"../Flyparent".get_children():
 			child.queue_free()
 	

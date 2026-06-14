@@ -13,6 +13,9 @@ func _process(delta: float) -> void:
 		$Red.position.y = 115.0
 		Trader.backrestart = false
 	size_change(0.01)
+	if $Red.scale.y < 0:
+		$"..".set_collision_layer_value(1, false)
+		$"..".set_collision_mask_value(1, false)
 
 func size_change(a):
 	$Red.scale.y -= 0.005 * a
