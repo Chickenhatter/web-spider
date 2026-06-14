@@ -6,6 +6,8 @@ const JUMP_VELOCITY = -400.0
 
 
 func _physics_process(delta: float) -> void:
+	if Trader.dead == true:
+		Trader.dans_area = false
 	if Trader.dans_area == false:
 		if not is_on_floor():
 			velocity += get_gravity() * delta
@@ -14,10 +16,16 @@ func _physics_process(delta: float) -> void:
 		caller_direct = 0
 		var movement = Vector2.ZERO
 		if Input.is_action_pressed('ui_a'):
-			$".".rotation_degrees -= 1
+			if Input.is_action_pressed("ui_v"):
+				$".".rotation_degrees -= 3
+			else:
+				$".".rotation_degrees -= 1
 			caller_direct = 1
 		if Input.is_action_pressed('ui_d'):
-			$".".rotation_degrees += 1
+			if Input.is_action_pressed("ui_v"):
+				$".".rotation_degrees += 3
+			else:
+				$".".rotation_degrees += 1
 			caller_direct = 2
 		if Input.is_action_pressed('ui_w'):
 			movement = Vector2.UP.rotated(deg_to_rad(rotation_degrees))

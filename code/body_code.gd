@@ -9,11 +9,12 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Trader.backrestart == true:
-		$Red.scale.y = 0.344
-		$Red.position.y = 115.0
+		$Red.scale.y = 0.688*1.5
+		$Red.position.y = 230.0*1.5
 		Trader.backrestart = false
 	size_change(0.01)
 	if $Red.scale.y < 0:
+		Trader.dead = true
 		$"..".set_collision_layer_value(1, false)
 		$"..".set_collision_mask_value(1, false)
 

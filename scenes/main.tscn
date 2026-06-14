@@ -25,7 +25,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_tefeu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0wfyh"]
-size = Vector2(4755.6465, 66)
+size = Vector2(5499, 66)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ya4ey"]
 radius = 111.085556
@@ -318,7 +318,7 @@ zoom = Vector2(0.2, 0.2)
 [node name="Web" type="Area2D" parent="Node2D/Base web/Node2D" unique_id=959384755]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Base web/Node2D/Web" unique_id=2071263381]
-position = Vector2(-115, 0)
+position = Vector2(-111.5, 0)
 shape = SubResource("RectangleShape2D_0wfyh")
 
 [node name="White" type="Sprite2D" parent="Node2D/Base web/Node2D/Web" unique_id=1718065354]
@@ -377,8 +377,18 @@ region_rect = Rect2(155.143, 338.57114, 45.714264, 9.142853)
 [node name="Node2D" type="Node2D" parent="Node2D/Webby" unique_id=73878123]
 script = ExtResource("3_sugp2")
 
+[node name="Flyparent" type="Node2D" parent="Node2D" unique_id=2031274204]
+
+[node name="Node2D" type="Node2D" parent="Node2D/Flyparent" unique_id=1809683791]
+script = ExtResource("19_0ld40")
+
+[node name="webbedflyparent" type="Node2D" parent="Node2D" unique_id=316358881]
+
+[node name="Node2D" type="Node2D" parent="Node2D" unique_id=1214445091]
+position = Vector2(-2880, -1619)
+
 [node name="Fly around" type="Node2D" parent="Node2D" unique_id=1287126337]
-position = Vector2(-2880, -1620)
+position = Vector2(-2880, -1619)
 script = ExtResource("11_ya4ey")
 
 [node name="place" type="Node2D" parent="Node2D/Fly around" unique_id=217216027]
@@ -390,19 +400,15 @@ shape = SubResource("CircleShape2D_ya4ey")
 
 [node name="Node2D" type="Node2D" parent="Node2D/Fly around/place" unique_id=1558089750]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D/Fly around/place/Node2D" unique_id=148125589]
-position = Vector2(24, 274)
+[node name="Node2D" type="Node2D" parent="Node2D/Fly around/place/Node2D" unique_id=1825206117]
+scale = Vector2(0.1, 0.1)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D/Fly around/place/Node2D/Node2D" unique_id=148125589]
+position = Vector2(26, 268)
 scale = Vector2(1, 1.0805)
 sprite_frames = SubResource("SpriteFrames_gqmmt")
 
 [node name="fly" type="Node2D" parent="Node2D/Fly around" unique_id=327989433]
-
-[node name="Flyparent" type="Node2D" parent="Node2D" unique_id=2031274204]
-
-[node name="Node2D" type="Node2D" parent="Node2D/Flyparent" unique_id=1809683791]
-script = ExtResource("19_0ld40")
-
-[node name="webbedflyparent" type="Node2D" parent="Node2D" unique_id=316358881]
 
 [node name="gameend" type="Node2D" parent="." unique_id=873193829]
 script = ExtResource("20_gqmmt")
@@ -425,11 +431,18 @@ texture = ExtResource("5_tefeu")
 position = Vector2(-90, 22842)
 shape = SubResource("RectangleShape2D_yc10j")
 
-[node name="Background" type="Sprite2D" parent="." unique_id=151916401]
+[node name="Node2D2" type="Node2D" parent="." unique_id=243280371]
+
+[node name="Background" type="Sprite2D" parent="Node2D2" unique_id=151916401]
 z_index = -100
 position = Vector2(-225.99998, -452.00003)
 scale = Vector2(7, 7)
 texture = ExtResource("21_yc10j")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Node2D2" unique_id=1277185718]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D2/CharacterBody2D" unique_id=576097030]
+polygon = PackedVector2Array(-3416, 3049, -2866, 36, -2867, -40, -2021, -1970, 2019, -2065, 2403, -1336, 2649, -15, 3304, 3055, 4864, 2863, 3575, -5590, -5051, -4820, -3512, 2997)
 
 [connection signal="area_entered" from="Node2D/Fly around/place/flybug" to="Node2D/Fly around" method="_on_flybug_area_entered"]
 [connection signal="area_exited" from="Node2D/Fly around/place/flybug" to="Node2D/Fly around" method="_on_flybug_area_exited"]

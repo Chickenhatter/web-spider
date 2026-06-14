@@ -1,4 +1,8 @@
 extends Node2D
+
+var size_down = false
+var size_up = false
+
 var xplace = 0
 var yplace = 0
 var inweb = false
@@ -11,15 +15,24 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if size_up == true:
+		$place/Node2D/Node2D.scale.x += 0.01
+		$place/Node2D/Node2D.scale.y += 0.01
+	if size_down == true:
+		$place/Node2D/Node2D.scale.x -= 0.005
+		$place/Node2D/Node2D.scale.y -= 0.005
+
 
 func spider_place():
+	size_up = true
 	xplace = randf_range(300,5460)
 	yplace = randf_range(300,2940)
 	$place.position.x = xplace
 	$place.position.y = yplace
 	bug_fly_up = true
 	await get_tree().create_timer(8.0).timeout
+	size_up = false
+	size_down = true
 	bug_fly_up = false
 	for area in $place/flybug.get_overlapping_areas():
 		if area.name == "Web":
@@ -30,12 +43,14 @@ func spider_place():
 		$place.position.y = 100
 		$place.position.x = -100
 	await get_tree().create_timer(2.0).timeout
+	size_down = false
 	$place.position.y = 100
 	$place.position.x = -100
 	await get_tree().create_timer(5.0).timeout
 	for child in $"../Flyparent".get_children():
 			child.queue_free()
-	
+	$place/Node2D/Node2D.scale.x = 0.01
+	$place/Node2D/Node2D.scale.y = 0.01
 	spider_place()
 
 func websummon():
