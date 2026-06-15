@@ -10,14 +10,18 @@ var bug_fly_up = false
 const flyscene = preload("res://scenes/fly.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$place/Node2D/Node2D.scale.x = 0.01
+	$place/Node2D/Node2D.scale.y = 0.01
 	spider_place()
 
-
+var a = 0
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	
 	if size_up == true:
-		$place/Node2D/Node2D.scale.x += 0.01
-		$place/Node2D/Node2D.scale.y += 0.01
+		a += 1
+		$place/Node2D/Node2D.scale.x += 0.0021
+		$place/Node2D/Node2D.scale.y += 0.0021
 	if size_down == true:
 		$place/Node2D/Node2D.scale.x -= 0.005
 		$place/Node2D/Node2D.scale.y -= 0.005
@@ -37,15 +41,14 @@ func spider_place():
 	for area in $place/flybug.get_overlapping_areas():
 		if area.name == "Web":
 			inweb = true
-			print('true')
 	if inweb == true:
 		websummon()
-		$place.position.y = 100
-		$place.position.x = -100
+		$place.position.y = 1000
+		$place.position.x = -1000
 	await get_tree().create_timer(2.0).timeout
 	size_down = false
-	$place.position.y = 100
-	$place.position.x = -100
+	$place.position.y = 1000
+	$place.position.x = -1000
 	await get_tree().create_timer(5.0).timeout
 	for child in $"../Flyparent".get_children():
 			child.queue_free()

@@ -5,15 +5,15 @@ extends Node2D
 func _ready() -> void:
 	pass # Replace with function body.
 
-
+var a = 10
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Trader.backrestart == true:
-		$Red.scale.y = 0.688*1.5
-		$Red.position.y = 230.0*1.5
+		$Red.scale.y = 0.452
+		$Red.position.y = 115.0
 		Trader.backrestart = false
 	size_change(0.01)
-	if $Red.scale.y < 0:
+	if $Red.scale.y < 0.02:
 		Trader.dead = true
 		$"..".set_collision_layer_value(1, false)
 		$"..".set_collision_mask_value(1, false)

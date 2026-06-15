@@ -48,7 +48,7 @@ animations = [{
 size = Vector2(10796, 810)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yc10j"]
-size = Vector2(18428, 11469)
+size = Vector2(32869, 11469)
 
 [node name="Node2D" type="Node2D" unique_id=818152458]
 
@@ -58,6 +58,8 @@ size = Vector2(18428, 11469)
 
 [node name="Spider" type="CharacterBody2D" parent="Node2D/Spider" unique_id=806650420]
 z_index = 10
+collision_layer = 32769
+collision_mask = 32769
 script = ExtResource("1_0wfyh")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/Spider/Spider" unique_id=1057952904]
@@ -309,7 +311,8 @@ script = ExtResource("1_o5qli")
 [node name="Camera" type="Node2D" parent="Node2D" unique_id=139337864]
 
 [node name="Camera2D" type="Camera2D" parent="Node2D/Camera" unique_id=32742748]
-zoom = Vector2(0.2, 0.2)
+position = Vector2(-231, -191)
+zoom = Vector2(0.17, 0.17)
 
 [node name="Base web" type="Node2D" parent="Node2D" unique_id=1009098045]
 
@@ -367,8 +370,8 @@ position = Vector2(-29.875277, 0)
 shape = SubResource("RectangleShape2D_0wfyh")
 
 [node name="White" type="Sprite2D" parent="Node2D/Base web/Node2D4/Web" unique_id=1351751595]
-position = Vector2(525.9322, -1.5)
-scale = Vector2(30.822914, -0.46107787)
+position = Vector2(518.1543, -1.5)
+scale = Vector2(30.752525, -0.46107787)
 texture = ExtResource("5_tefeu")
 region_rect = Rect2(155.143, 338.57114, 45.714264, 9.142853)
 
@@ -414,6 +417,8 @@ sprite_frames = SubResource("SpriteFrames_gqmmt")
 script = ExtResource("20_gqmmt")
 
 [node name="death fall" type="Area2D" parent="gameend" unique_id=1353246966]
+collision_layer = 32769
+collision_mask = 32769
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="gameend/death fall" unique_id=1541888875]
 position = Vector2(-335, 3614)
@@ -426,9 +431,11 @@ scale = Vector2(30.9276, 26.15569)
 texture = ExtResource("5_tefeu")
 
 [node name="end_game" type="Area2D" parent="gameend" unique_id=299627883]
+collision_layer = 32769
+collision_mask = 32769
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="gameend/end_game" unique_id=1955745529]
-position = Vector2(-90, 22842)
+position = Vector2(25, 23580)
 shape = SubResource("RectangleShape2D_yc10j")
 
 [node name="Node2D2" type="Node2D" parent="." unique_id=243280371]
@@ -443,6 +450,34 @@ texture = ExtResource("21_yc10j")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D2/CharacterBody2D" unique_id=576097030]
 polygon = PackedVector2Array(-3416, 3049, -2866, 36, -2867, -40, -2021, -1970, 2019, -2065, 2403, -1336, 2649, -15, 3304, 3055, 4864, 2863, 3575, -5590, -5051, -4820, -3512, 2997)
+
+[node name="Node2D" type="Node2D" parent="Node2D2" unique_id=1558807342]
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D2/Node2D" unique_id=706090088]
+self_modulate = Color(0.011764706, 0.011764706, 0.011764706, 1)
+position = Vector2(-7841, 813.00073)
+scale = Vector2(33.072, 68.256)
+texture = ExtResource("7_85g3d")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Node2D2/Node2D" unique_id=1280565475]
+self_modulate = Color(0.011764706, 0.011764706, 0.011764706, 1)
+position = Vector2(7412, 1297)
+scale = Vector2(33.072, 68.256)
+texture = ExtResource("7_85g3d")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Node2D2/Node2D" unique_id=273836007]
+self_modulate = Color(0.011764706, 0.011764706, 0.011764706, 1)
+position = Vector2(-208.63782, 7148.999)
+rotation = 1.5707964
+scale = Vector2(33.072, 94.0588)
+texture = ExtResource("7_85g3d")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Node2D2/Node2D" unique_id=108739944]
+self_modulate = Color(0.011764706, 0.011764706, 0.011764706, 1)
+position = Vector2(-211.20456, -8079)
+rotation = 1.5707964
+scale = Vector2(33.072, 94.07338)
+texture = ExtResource("7_85g3d")
 
 [connection signal="area_entered" from="Node2D/Fly around/place/flybug" to="Node2D/Fly around" method="_on_flybug_area_entered"]
 [connection signal="area_exited" from="Node2D/Fly around/place/flybug" to="Node2D/Fly around" method="_on_flybug_area_exited"]
