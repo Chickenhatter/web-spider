@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://bl0211orx8smy"]
+
+[ext_resource type="Texture2D" uid="uid://ch5b2x1001wmy" path="res://assets/background/background.png" id="1_u80x2"]
+[ext_resource type="Texture2D" uid="uid://m66bvjlqbb6r" path="res://assets/white.png" id="2_bodal"]
+[ext_resource type="Script" uid="uid://cst14jsy86x05" path="res://code/start.gd" id="3_bodal"]
+
+[node name="Node2D" type="Node2D" unique_id=1150161592]
+
+[node name="Node2D" type="Node2D" parent="." unique_id=166176131]
+
+[node name="Background" type="Node2D" parent="Node2D" unique_id=1934155830]
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Background" unique_id=689995833]
+position = Vector2(571, 302)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("1_u80x2")
+
+[node name="Node2D" type="Node2D" parent="Node2D/Background" unique_id=1331580330]
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Background/Node2D" unique_id=1621240743]
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(-774, 417.99994)
+scale = Vector2(6.7511315, 11.185629)
+texture = ExtResource("2_bodal")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Node2D/Background/Node2D" unique_id=1741237552]
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(1905.9999, 361)
+scale = Vector2(6.723983, 11.185629)
+texture = ExtResource("2_bodal")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Node2D/Background/Node2D" unique_id=449049498]
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(569.9733, 1465.9999)
+rotation = 1.5707964
+scale = Vector2(6.7511315, 24.960608)
+texture = ExtResource("2_bodal")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Node2D/Background/Node2D" unique_id=1596543094]
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(563.5721, -984.99994)
+rotation = 1.5707964
+scale = Vector2(6.7511315, 24.935284)
+texture = ExtResource("2_bodal")
+
+[node name="Start" type="Node2D" parent="Node2D" unique_id=1541962791]
+script = ExtResource("3_bodal")
+
+[node name="Start" type="Button" parent="Node2D/Start" unique_id=628882223]
+offset_left = 394.0
+offset_top = 274.0
+offset_right = 774.0
+offset_bottom = 389.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Start" unique_id=134662313]
+self_modulate = Color(0, 0, 0, 0)
+position = Vector2(623.5, 253.5)
+scale = Vector2(7.2805433, 6.7724547)
+texture = ExtResource("2_bodal")
+
+[node name="Fear" type="Node2D" parent="Node2D" unique_id=113089808]
+
+[node name="Fear" type="Button" parent="Node2D/Fear" unique_id=2028466238]
+offset_right = 132.0
+offset_bottom = 85.0
+text = "I am scared of Spiders"
+
+[connection signal="pressed" from="Node2D/Start/Start" to="Node2D/Start" method="_on_start_pressed"]
+[connection signal="pressed" from="Node2D/Fear/Fear" to="Node2D/Start" method="_on_fear_pressed"]

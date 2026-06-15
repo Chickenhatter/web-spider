@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://bh8yb4n7xn57s" path="res://assets/spider/head-modified.png" id="10_muem4"]
 [ext_resource type="Texture2D" uid="uid://bu1swq8vr4mop" path="res://assets/spider/toplg-modified.png" id="11_jkv2x"]
 [ext_resource type="Script" uid="uid://dk1uokl7jmg27" path="res://code/fly_around.gd" id="11_ya4ey"]
+[ext_resource type="Texture2D" uid="uid://dl04qcmhskqdd" path="res://assets/spider/fraud.png" id="14_jscy8"]
 [ext_resource type="Texture2D" uid="uid://cb6hld14wel1i" path="res://assets/fly/flyup-modified.png" id="17_dp3eg"]
 [ext_resource type="Texture2D" uid="uid://04dxnl5wbeak" path="res://assets/fly/flydown-modified.png" id="18_0ld40"]
 [ext_resource type="Script" uid="uid://cua0xlqvlo44u" path="res://code/tester.gd" id="19_0ld40"]
@@ -63,18 +64,21 @@ collision_mask = 32769
 script = ExtResource("1_0wfyh")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/Spider/Spider" unique_id=1057952904]
+position = Vector2(-14, 0)
 polygon = PackedVector2Array(-8, -130, -14, -91, -11, -56, -8, -38, -2, -26, -16, -19, -25, -8, -31, 8, -27, 23, -19, 34, -10, 40, 35, 40, 44, 32, 51, 22, 53, 10, 51, -2, 43, -15, 34, -23, 31, -23, 40, -37, 43, -54, 43, -60, 48, -77, 46, -110, 37, -130, 38, -105, 16, -89, -7, -105)
 
 [node name="Node2D" type="Node2D" parent="Node2D/Spider/Spider" unique_id=213016547 groups=["spider"]]
 position = Vector2(11, 197)
 
 [node name="Spider_area" type="Area2D" parent="Node2D/Spider/Spider" unique_id=121386033]
+position = Vector2(-16, 1)
 script = ExtResource("3_tbgi4")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/Spider/Spider/Spider_area" unique_id=255408508]
 polygon = PackedVector2Array(-2, -26, -22, -13, -30, 7, -26, 26, -11, 40, 34, 40, 48, 29, 54, 11, 48, -9, 38, -20, 31, -23)
 
 [node name="Web_area" type="Area2D" parent="Node2D/Spider/Spider" unique_id=955012799]
+position = Vector2(-10, 0)
 script = ExtResource("4_o6xl0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Spider/Spider/Web_area" unique_id=569730358]
@@ -87,6 +91,7 @@ scale = Vector2(0.17187499, 0.17968757)
 texture = ExtResource("2_jyhfs")
 
 [node name="Abdomen" type="Node2D" parent="Node2D/Spider/Spider" unique_id=1847208833]
+position = Vector2(-15, 1)
 script = ExtResource("5_choun")
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/Spider/Spider/Abdomen" unique_id=1596888184]
@@ -120,6 +125,7 @@ scale = Vector2(0.1755, 0.239)
 texture = ExtResource("10_muem4")
 
 [node name="Legs" type="Node2D" parent="Node2D/Spider/Spider" unique_id=39576598]
+position = Vector2(-14, 2)
 script = ExtResource("9_eb6dy")
 
 [node name="leg_one" type="Node2D" parent="Node2D/Spider/Spider/Legs" unique_id=797552594]
@@ -305,6 +311,14 @@ rotation = -1.1065181
 scale = Vector2(0.2206776, 0.04165308)
 texture = ExtResource("11_jkv2x")
 
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Spider/Spider" unique_id=596376203]
+self_modulate = Color(1, 1, 1, 0)
+z_index = 111
+position = Vector2(-8.000002, -196.00002)
+rotation = 3.1736
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("14_jscy8")
+
 [node name="WebControl" type="Node2D" parent="Node2D/Spider" unique_id=1217038515]
 script = ExtResource("1_o5qli")
 
@@ -414,6 +428,7 @@ sprite_frames = SubResource("SpriteFrames_gqmmt")
 [node name="fly" type="Node2D" parent="Node2D/Fly around" unique_id=327989433]
 
 [node name="gameend" type="Node2D" parent="." unique_id=873193829]
+visible = false
 script = ExtResource("20_gqmmt")
 
 [node name="death fall" type="Area2D" parent="gameend" unique_id=1353246966]
@@ -425,9 +440,9 @@ position = Vector2(-335, 3614)
 shape = SubResource("RectangleShape2D_0ld40")
 
 [node name="Sprite2D" type="Sprite2D" parent="gameend/death fall" unique_id=663267857]
-self_modulate = Color(0.011764706, 0.011764706, 0.011764706, 0)
-position = Vector2(38.5, 71)
-scale = Vector2(30.9276, 26.15569)
+self_modulate = Color(0.011764706, 0.011764706, 0.011764706, 1)
+position = Vector2(-1102.0001, -767.99963)
+scale = Vector2(41.24887, 56.431133)
 texture = ExtResource("5_tefeu")
 
 [node name="end_game" type="Area2D" parent="gameend" unique_id=299627883]

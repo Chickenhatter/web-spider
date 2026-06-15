@@ -44,24 +44,34 @@ func _process(delta: float) -> void:
 	
 	
 	
+	if Input.is_action_pressed('ui_v'):
+		if backleft == 1:
+			number_control_l -= 0.6
+		elif backleft == 2:
+			number_control_l += 0.6
+		if backright == 1:
+			number_control_r -= 0.6
+		elif backright == 2:
+			number_control_r += 0.6
+	else:
+		if backleft == 1:
+			number_control_l -= 0.2
+		elif backleft == 2:
+			number_control_l += 0.2
+		if backright == 1:
+			number_control_r -= 0.2
+		elif backright == 2:
+			number_control_r += 0.2
 	
-	if backleft == 1:
-		number_control_l -= 0.2
-	elif backleft == 2:
-		number_control_l += 0.2
-	if backright == 1:
-		number_control_r -= 0.2
-	elif backright == 2:
-		number_control_r += 0.2
 	if left == true:
-		sin_control_one = sin(number_control_l)
-		sin_control_three = sin(number_control_l)
-		sin_control_five = sin(number_control_l)
-		sin_control_seven = sin(number_control_l)
-		sin_control_two = cos(number_control_r)
-		sin_control_four = sin(number_control_r)
-		sin_control_six = sin(number_control_r)
-		sin_control_eight = sin(number_control_r)
+		sin_control_one = sin(number_control_l+0.2)
+		sin_control_three = sin(number_control_l+0.4)
+		sin_control_five = sin(number_control_l+0.6)
+		sin_control_seven = sin(number_control_l+8)
+		sin_control_two = cos(number_control_r-0.2)
+		sin_control_four = sin(number_control_r-0.4)
+		sin_control_six = sin(number_control_r-0.6)
+		sin_control_eight = sin(number_control_r-0.8)
 	
 	
 	
