@@ -19,4 +19,7 @@ func _on_start_pressed() -> void:
 
 
 func _on_fear_pressed() -> void:
-	Trader.fear = true
+	if Trader.fear == true:
+		Trader.fear = false
+	else:
+		Trader.fear = true

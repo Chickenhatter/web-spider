@@ -4,8 +4,13 @@ var caller_direct = 0
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
+func ready() -> void:
+	pass
+
 
 func _physics_process(delta: float) -> void:
+	if Trader.fear == true:
+		$Sprite2D.self_modulate.a = 1
 	if Trader.dead == true:
 		Trader.dans_area = false
 	if Trader.dans_area == false:
