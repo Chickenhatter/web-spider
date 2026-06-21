@@ -82,6 +82,8 @@ texture = ExtResource("2_bodal")
 script = ExtResource("3_bodal")
 
 [node name="Start" type="Button" parent="Node2D/Start" unique_id=628882223]
+self_modulate = Color(18.892157, 18.892157, 18.892157, 0)
+z_index = 1000
 offset_left = 390.0
 offset_top = 261.0
 offset_right = 822.0
@@ -93,6 +95,74 @@ z_index = 4096
 position = Vector2(623.5, 253.5)
 scale = Vector2(7.2805433, 6.7724547)
 texture = ExtResource("2_bodal")
+
+[node name="Node2D" type="Node2D" parent="Node2D/Start" unique_id=1482330106]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Node2D/Start/Node2D" unique_id=1984463894]
+offset_left = 362.0
+offset_top = 419.0
+offset_right = 585.0
+offset_bottom = 580.0
+rotation = -0.8658436
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("4_kdmts")
+theme_override_font_sizes/normal_font_size = 31
+text = "LLstartl"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Node2D/Start/Node2D" unique_id=819671785]
+offset_left = 508.00003
+offset_top = 325.00003
+offset_right = 731.0
+offset_bottom = 486.00003
+rotation = -0.13592952
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("4_kdmts")
+theme_override_font_sizes/normal_font_size = 31
+text = "ATHE"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="Node2D/Start/Node2D" unique_id=1263365186]
+offset_left = 634.0
+offset_top = 246.0
+offset_right = 857.0
+offset_bottom = 407.0
+rotation = 0.908721
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("4_kdmts")
+theme_override_font_sizes/normal_font_size = 31
+text = "Game"
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="Node2D/Start/Node2D" unique_id=700460537]
+offset_left = 614.0
+offset_top = 556.0
+offset_right = 837.0
+offset_bottom = 717.0
+rotation = -0.5696245
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("4_kdmts")
+theme_override_font_sizes/normal_font_size = 31
+text = "Web"
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="Node2D/Start/Node2D" unique_id=1296755862]
+offset_left = 485.0
+offset_top = 438.0
+offset_right = 708.0
+offset_bottom = 599.0
+rotation = 0.58490485
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("4_kdmts")
+theme_override_font_sizes/normal_font_size = 31
+text = "Fly"
+
+[node name="RichTextLabel6" type="RichTextLabel" parent="Node2D/Start/Node2D" unique_id=1985219669]
+offset_left = 704.0
+offset_top = 491.99994
+offset_right = 927.0
+offset_bottom = 652.99994
+rotation = -0.33298218
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("4_kdmts")
+theme_override_font_sizes/normal_font_size = 31
+text = "Catcher"
 
 [node name="Fear" type="Node2D" parent="Node2D" unique_id=113089808]
 
@@ -113,15 +183,6 @@ mouse_filter = 2
 theme_override_colors/default_color = Color(0.0860909, 0.05185374, 0.008639286, 1)
 theme_override_fonts/normal_font = ExtResource("4_kdmts")
 text = "I am scared of spiders"
-
-[node name="TextEdit" type="TextEdit" parent="Node2D/Fear" unique_id=1478342480]
-offset_right = 8.0
-offset_bottom = 8.0
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Node2D" unique_id=1984463894]
-offset_right = 40.0
-offset_bottom = 40.0
-theme_override_fonts/normal_font = ExtResource("4_kdmts")
 
 [connection signal="pressed" from="Node2D/Start/Start" to="Node2D/Start" method="_on_start_pressed"]
 [connection signal="pressed" from="Node2D/Fear/Fear" to="Node2D/Start" method="_on_fear_pressed"]

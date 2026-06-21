@@ -24,8 +24,8 @@ script = ExtResource("1_xr3pu")
 
 [node name="flyuntrap" type="Area2D" parent="." unique_id=618801098]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="flyuntrap" unique_id=846676295]
-shape = SubResource("RectangleShape2D_tvkj1")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="flyuntrap" unique_id=2011988977]
+polygon = PackedVector2Array(0, -14, 7.666667, -12.333334, 13.333334, -5.666667, 16.333334, -9, 18.666668, -5, 36.666668, -7, 34, 0, 34.666668, 9, 21.666668, 2, 14.333334, 2.6666667, 21.666668, 10.666667, 12, 8.333334, 6.666667, 13.333334, -4, 13.666667, -10, 9.666667, -16.666668, 11.666667, -14.333334, 2.6666667, -28.666668, 10.333334, -29.666668, -1, -32.666668, -8.666667, -13.666667, -4.666667, -16.333334, -10.666667, -10, -10, 0, -14.333334)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1380534401]
 shape = SubResource("RectangleShape2D_tvkj1")
@@ -35,4 +35,5 @@ position = Vector2(6, 48)
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_djddo")
 
+[connection signal="area_entered" from="flyuntrap" to="." method="_on_flyuntrap_area_entered"]
 [connection signal="body_entered" from="flyuntrap" to="." method="_on_flyuntrap_body_entered"]

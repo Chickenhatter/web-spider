@@ -23,3 +23,7 @@ func webbed_fly():
 	var webbedflyparent = $"../../webbedflyparent"
 	webbedflyparent.add_child(flyweb)
 	queue_free()
+
+
+func _on_flyuntrap_area_entered(area: Area2D) -> void:
+	pass # Replace with function body.
