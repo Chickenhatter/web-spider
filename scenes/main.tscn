@@ -28,9 +28,6 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0wfyh"]
 size = Vector2(5499, 66)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ya4ey"]
-radius = 111.085556
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_gqmmt"]
 animations = [{
 "frames": [{
@@ -409,13 +406,16 @@ position = Vector2(-2880, -1619)
 script = ExtResource("11_ya4ey")
 
 [node name="place" type="Node2D" parent="Node2D/Fly around" unique_id=217216027]
+position = Vector2(17268, 5348)
 
 [node name="flybug" type="Area2D" parent="Node2D/Fly around/place" unique_id=629882009]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Fly around/place/flybug" unique_id=765036180]
-shape = SubResource("CircleShape2D_ya4ey")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/Fly around/place/flybug" unique_id=873334927]
+scale = Vector2(1.1, 1.1)
+polygon = PackedVector2Array(-98, -57, -18, -43, 13, -44, 103, -59, 130, -32, 114, 12, 58, 18, 33, 61, -30, 61, -54, 18, -112, -3, -125, -40)
 
 [node name="Node2D" type="Node2D" parent="Node2D/Fly around/place" unique_id=1558089750]
+scale = Vector2(1.2, 1.2)
 
 [node name="Node2D" type="Node2D" parent="Node2D/Fly around/place/Node2D" unique_id=1825206117]
 scale = Vector2(0.1, 0.1)

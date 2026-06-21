@@ -23,4 +23,4 @@ func _on_death_fall_body_entered(body: Node2D) -> void:
 
 func _on_end_game_body_entered(body: Node2D) -> void:
 	if body.name == "Spider":
-		get_tree().change_scene_to_file("res://scenes/main.tscn")
+		get_tree().change_scene_to_file("res://scenes/end.tscn")

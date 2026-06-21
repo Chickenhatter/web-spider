@@ -1,3 +1,49 @@
 [gd_scene format=3 uid="uid://fxloyx11i4ej"]
 
+[ext_resource type="Texture2D" uid="uid://nnieot7mi7pp" path="res://assets/sad.png" id="1_3d26k"]
+[ext_resource type="Script" uid="uid://b6djbgdxul2y5" path="res://code/end.gd" id="1_p7m4f"]
+[ext_resource type="Texture2D" uid="uid://m66bvjlqbb6r" path="res://assets/white.png" id="2_p7m4f"]
+
 [node name="Node2D" type="Node2D" unique_id=140144759]
+script = ExtResource("1_p7m4f")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1595151973]
+z_index = 1000
+zoom = Vector2(2, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1632329298]
+position = Vector2(6.000004, 29.000008)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_3d26k")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D" unique_id=758544662]
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(-1956.2501, -221.25006)
+scale = Vector2(9.377828, 15.52395)
+texture = ExtResource("2_p7m4f")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D" unique_id=764199159]
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(1737.5001, -42.500046)
+scale = Vector2(9.377828, 15.52395)
+texture = ExtResource("2_p7m4f")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Sprite2D" unique_id=39103272]
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(-102.49998, -1827.4999)
+scale = Vector2(26.199095, 15.52395)
+texture = ExtResource("2_p7m4f")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Sprite2D" unique_id=1090694054]
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(-97.499985, 1852.4999)
+scale = Vector2(26.199095, 15.52395)
+texture = ExtResource("2_p7m4f")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=283369012]
+offset_left = -265.0
+offset_top = -145.0
+offset_right = 226.0
+offset_bottom = 175.0
+text = "The itsy bitsy spider sat alone on the floor,
+                     Cold and weeping close to deaths door"

@@ -3,12 +3,14 @@
 [ext_resource type="Texture2D" uid="uid://ch5b2x1001wmy" path="res://assets/background/background.png" id="1_u80x2"]
 [ext_resource type="Texture2D" uid="uid://m66bvjlqbb6r" path="res://assets/white.png" id="2_bodal"]
 [ext_resource type="Script" uid="uid://cst14jsy86x05" path="res://code/start.gd" id="3_bodal"]
+[ext_resource type="FontFile" uid="uid://bnso450t7r1k" path="res://assets/as/text.ttf" id="4_kdmts"]
 
 [node name="Node2D" type="Node2D" unique_id=1150161592]
 
 [node name="Node2D" type="Node2D" parent="." unique_id=166176131]
 
 [node name="Background" type="Node2D" parent="Node2D" unique_id=1934155830]
+position = Vector2(-2, -53)
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/Background" unique_id=689995833]
 position = Vector2(571, 302)
@@ -44,17 +46,50 @@ rotation = 1.5707964
 scale = Vector2(6.7511315, 24.935284)
 texture = ExtResource("2_bodal")
 
+[node name="Node2D2" type="Node2D" parent="Node2D/Background" unique_id=868909754]
+
+[node name="White" type="Sprite2D" parent="Node2D/Background/Node2D2" unique_id=426497029]
+position = Vector2(582.5, 477.25)
+scale = Vector2(4.3393664, 0.14670658)
+texture = ExtResource("2_bodal")
+
+[node name="White2" type="Sprite2D" parent="Node2D/Background/Node2D2" unique_id=1371584948]
+position = Vector2(614.55334, -105)
+scale = Vector2(2.2410114, 0.14670658)
+skew = -0.6335545
+texture = ExtResource("2_bodal")
+
+[node name="White3" type="Sprite2D" parent="Node2D/Background/Node2D2" unique_id=802972280]
+position = Vector2(611, 378.00003)
+rotation = 1.5707964
+scale = Vector2(4.3393664, 0.14670658)
+texture = ExtResource("2_bodal")
+
+[node name="White4" type="Sprite2D" parent="Node2D/Background/Node2D2" unique_id=1910781885]
+position = Vector2(572.32007, 440.3201)
+rotation = 0.7853982
+scale = Vector2(4.3864636, 0.14670658)
+skew = -0.26529005
+texture = ExtResource("2_bodal")
+
+[node name="White5" type="Sprite2D" parent="Node2D/Background/Node2D2" unique_id=1884970734]
+position = Vector2(614.9208, 474.0793)
+rotation = 2.3561945
+scale = Vector2(4.811889, 0.14670658)
+texture = ExtResource("2_bodal")
+
 [node name="Start" type="Node2D" parent="Node2D" unique_id=1541962791]
 script = ExtResource("3_bodal")
 
 [node name="Start" type="Button" parent="Node2D/Start" unique_id=628882223]
-offset_left = 403.0
-offset_top = 337.0
-offset_right = 835.0
-offset_bottom = 605.0
+offset_left = 390.0
+offset_top = 261.0
+offset_right = 822.0
+offset_bottom = 529.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/Start" unique_id=134662313]
 self_modulate = Color(0, 0, 0, 0)
+z_index = 4096
 position = Vector2(623.5, 253.5)
 scale = Vector2(7.2805433, 6.7724547)
 texture = ExtResource("2_bodal")
@@ -62,41 +97,31 @@ texture = ExtResource("2_bodal")
 [node name="Fear" type="Node2D" parent="Node2D" unique_id=113089808]
 
 [node name="Fear" type="Button" parent="Node2D/Fear" unique_id=2028466238]
-offset_right = 132.0
-offset_bottom = 85.0
-text = "I am scared of Spiders"
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 15.0
+offset_top = 346.0
+offset_right = 81.0
+offset_bottom = 619.0
 
-[node name="Node2D" type="Node2D" parent="Node2D" unique_id=868909754]
+[node name="RichTextLabel" type="RichTextLabel" parent="Node2D/Fear" unique_id=639936190]
+offset_left = 34.0
+offset_top = 592.0
+offset_right = 402.38342
+offset_bottom = 795.6158
+rotation = -1.5407195
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.0860909, 0.05185374, 0.008639286, 1)
+theme_override_fonts/normal_font = ExtResource("4_kdmts")
+text = "I am scared of spiders"
 
-[node name="White" type="Sprite2D" parent="Node2D/Node2D" unique_id=426497029]
-position = Vector2(582.5, 477.25)
-scale = Vector2(4.3393664, 0.14670658)
-texture = ExtResource("2_bodal")
+[node name="TextEdit" type="TextEdit" parent="Node2D/Fear" unique_id=1478342480]
+offset_right = 8.0
+offset_bottom = 8.0
 
-[node name="White2" type="Sprite2D" parent="Node2D/Node2D" unique_id=1371584948]
-position = Vector2(614.55334, -105)
-scale = Vector2(2.2410114, 0.14670658)
-skew = -0.6335545
-texture = ExtResource("2_bodal")
-
-[node name="White3" type="Sprite2D" parent="Node2D/Node2D" unique_id=802972280]
-position = Vector2(611, 378.00003)
-rotation = 1.5707964
-scale = Vector2(4.3393664, 0.14670658)
-texture = ExtResource("2_bodal")
-
-[node name="White4" type="Sprite2D" parent="Node2D/Node2D" unique_id=1910781885]
-position = Vector2(572.32007, 440.3201)
-rotation = 0.7853982
-scale = Vector2(4.3864636, 0.14670658)
-skew = -0.26529005
-texture = ExtResource("2_bodal")
-
-[node name="White5" type="Sprite2D" parent="Node2D/Node2D" unique_id=1884970734]
-position = Vector2(614.9208, 474.0793)
-rotation = 2.3561945
-scale = Vector2(4.811889, 0.14670658)
-texture = ExtResource("2_bodal")
+[node name="RichTextLabel" type="RichTextLabel" parent="Node2D" unique_id=1984463894]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_fonts/normal_font = ExtResource("4_kdmts")
 
 [connection signal="pressed" from="Node2D/Start/Start" to="Node2D/Start" method="_on_start_pressed"]
 [connection signal="pressed" from="Node2D/Fear/Fear" to="Node2D/Start" method="_on_fear_pressed"]

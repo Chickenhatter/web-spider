@@ -26,7 +26,6 @@ func _process(delta: float) -> void:
 		$place/Node2D/Node2D.scale.x -= 0.005
 		$place/Node2D/Node2D.scale.y -= 0.005
 
-
 func spider_place():
 	size_up = true
 	xplace = randf_range(300,5460)
