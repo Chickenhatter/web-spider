@@ -45,5 +45,11 @@ offset_left = -265.0
 offset_top = -145.0
 offset_right = 226.0
 offset_bottom = 175.0
-text = "The itsy bitsy spider sat alone on the floor,
-                     Cold and weeping close to deaths door"
+text = "The itsy bitsy spider was not the best,
+                     but now it can build a new nest"
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1287603195]
+self_modulate = Color(0.012617188, 0.012617188, 0.012617188, 1)
+position = Vector2(12.500008, -8.000008)
+scale = Vector2(2.9547513, 2.6946106)
+texture = ExtResource("2_p7m4f")

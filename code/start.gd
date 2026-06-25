@@ -5,10 +5,17 @@ var fade = false
 func _ready() -> void:
 	if Trader.fear == true:
 		$Node2D/Spider/Spider/Sprite2D.self_modulate.a = 1
+	if Trader.played == true:
+		$Sprite2D.self_modulate.a = 1
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if Trader.played == true:
+		$Sprite2D.self_modulate.a -= 0.01
+	if $Sprite2D.self_modulate.a < 0:
+		Trader.played = false
+		$Sprite2D.self_modulate.a = 0
 	if fade == true:
 		$Sprite2D.self_modulate.a += 0.01
 		await get_tree().create_timer(2.0).timeout

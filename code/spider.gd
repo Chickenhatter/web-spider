@@ -5,10 +5,11 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
 func ready() -> void:
-	pass
+	Trader.played = true
 
 
 func _physics_process(delta: float) -> void:
+	Trader.played = true
 	if Trader.fear == true:
 		$Sprite2D.self_modulate.a = 1
 	if Trader.dead == true:
