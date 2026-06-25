@@ -13,4 +13,4 @@
 
 <p>You can play this on itch.io</p>
 
-<img src="https://github.com/Chickenhatter/sliding-puzzle-horizions/blob/main/Screenshot%20From%202026-05-30%2013-15-19.png">
+<img src="https://github.com/Chickenhatter/web-spider/blob/main/Screenshot%20From%202026-06-25%2022-56-44.png">
