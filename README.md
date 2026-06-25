@@ -3,6 +3,7 @@
 <p>There was no AI useage in this project</p>
 <h3>Movement</h3>
 <p>Use ws for moving forwards and backwards</p>
+<p>Use ad for moving left and right</p>
 <p>The flies have to be caught in the web and then webbed</p>
 <p>Eat the webbed spider using G</p>
 <p>Place down web by pressing t and having back of spider on white web</p>
